@@ -24,7 +24,7 @@ function setup(){
 
     scene = createSprite(0,400,1368,655);
     scene.addImage('scene',scene_img);
-    scene.scale = 0.75;
+    scene.scale = 1;
     scene.x = scene.width/2;
 
     rocket = createSprite(40,327.5,20,20);
@@ -56,11 +56,11 @@ function draw(){
        rocket.y = rocket.y + 10;
     }
     if(keyDown(RIGHT_ARROW)){
-        rocket.x = rocket.x + 0.1;
+        rocket.x = rocket.x + 0.005;
      }
-    fill(0)
-    textSize(24)
-    text("Petrol Level :"+petrolLevel,250,600);
+    fill(255)
+    textSize(34)
+    text("Petrol Level :"+petrolLevel,1000,50);
    
     
  if(frameCount % 100 === 0){
@@ -81,15 +81,15 @@ function draw(){
     petrol.velocityX = -5;
     petrol.scale = 0.05;
  }
- if(isTouching(rocket,obstacles)){
+ /*if(isTouching(rocket,obstacles)){
       petrolLevel = petrolLevel - 350; 
    }
    else{
       petrolLevel = petrolLevel;
-   }
+   }*/
 
 }
-    function isTouching(object1,object2){ 
+   /* function isTouching(object1,object2){ 
        if(object1.x - object2.x < object2.width/2 + object1.width/2 &&
          object2.x - object1.x < object2.width/2 + object1.width/2 &&
          object1.y - object2.y < object2.height/2 + object1.height/2 && 
@@ -99,4 +99,5 @@ function draw(){
             else { 
                return false; 
          } 
-      }
+      }*/
+
